@@ -55,6 +55,8 @@ Repository to Practicing data cleaning, transformation, and analysis techniques.
     │   └── train.py            <- Code to train models
     │
     └── plots.py                <- Code to create visualizations
+    |
+    |__ classifier.py
 ```
 
 --------
