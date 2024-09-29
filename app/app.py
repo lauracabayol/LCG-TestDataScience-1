@@ -1,27 +1,32 @@
-from flask import Flask, request, jsonify
+import gradio as gr
 import pickle
 import numpy as np
 
-app = Flask(__name__)
-
-# Load the model from the pickle file
-with open('model.pkl', 'rb') as f:
+# Load your trained model
+with open("app/model.pkl", "rb") as f:  # Adjusted the path to model.pkl
     model = pickle.load(f)
 
-@app.route('/')
-def home():
-    return "Welcome to the Penguin Classifier API!"
+# Define a function to make predictions
+def predict(feature1, feature2, feature3, feature4, feature5):
+    features = np.array([feature1, feature2, feature3, feature4, feature5]).reshape(1, -1)
+    prediction = model.predict(features)
+    return prediction[0]
 
-@app.route('/predict', methods=['POST'])
-def predict():
-    # Parse input features from the request body (assumed to be JSON)
-    data = request.get_json()
-    features = np.array(data['features']).reshape(1, -1)
-    
-    # Make prediction
-    prediction = model.predict(features).tolist()
-
-    return jsonify({'prediction': prediction})
+# Create the Gradio interface
+interface = gr.Interface(
+    fn=predict,
+    inputs=[
+        gr.inputs.Number(label="Feature 1"),
+        gr.inputs.Number(label="Feature 2"),
+        gr.inputs.Number(label="Feature 3"),
+        gr.inputs.Number(label="Feature 4"),
+        gr.inputs.Number(label="Feature 5")
+    ],
+    outputs="text",
+    title="Penguin Classifier"
+)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    interface.launch()
+
+
