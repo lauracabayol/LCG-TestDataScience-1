@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 # Load your trained model
-with open("app/model.pkl", "rb") as f:  # Adjusted the path to model.pkl
+with open("model.pkl", "rb") as f:  # Adjusted the path to model.pkl
     model = pickle.load(f)
 
 # Define a function to make predictions
