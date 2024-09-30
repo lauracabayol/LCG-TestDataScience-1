@@ -5,6 +5,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from VitalMetrics.config import MODEL_PARAMS
 from loguru import logger
 
+
 class Classifier:
     def __init__(self, model_type: str = 'RandomForest'):
         """Initialize the classifier based on the selected model type.

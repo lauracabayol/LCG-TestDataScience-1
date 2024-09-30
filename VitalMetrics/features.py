@@ -7,6 +7,8 @@ from sklearn.model_selection import train_test_split
 from VitalMetrics.config import RAW_DATA_DIR, PROCESSED_DATA_DIR
 
 app = typer.Typer()
+
+
 @app.command()
 def main(
     # Paths for input and output files
@@ -65,13 +67,13 @@ def feature_engineering(train_df: pd.DataFrame, test_df: pd.DataFrame, verbose: 
 
     # Define columns to delete, encode, and scale
     columns_to_delete = ['sex', 'year']
-    columns_to_encode = ['species','island']
+    columns_to_encode = ['species', 'island']
     features_to_scale = ['bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 'body_mass_g']  # Numeric features to scale
 
     # Delete columns
-    train_df.drop(columns = columns_to_delete, inplace=True)
-    test_df.drop(columns = columns_to_delete, inplace=True)
-    
+    train_df.drop(columns=columns_to_delete, inplace=True)
+    test_df.drop(columns=columns_to_delete, inplace=True)
+
     # Encoding categorical columns (using LabelEncoder)
     logger.info("Applying label encoding on categorical features...")
     LabEnc_mapping = {}

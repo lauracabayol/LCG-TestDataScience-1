@@ -1,15 +1,16 @@
+from VitalMetrics.config import MODELS_DIR, PROCESSED_DATA_DIR, PREDICTED_DATA_DIR
+from tqdm import tqdm
+from loguru import logger
 from pathlib import Path
 import typer
 import pandas as pd
 import mlflow
 import mlflow.sklearn
-mlflow.set_tracking_uri("http://127.0.0.1:5000") 
-from loguru import logger
-from tqdm import tqdm
+mlflow.set_tracking_uri("http://127.0.0.1:5000")
 
-from VitalMetrics.config import MODELS_DIR, PROCESSED_DATA_DIR, PREDICTED_DATA_DIR
 
 app = typer.Typer()
+
 
 @app.command()
 def main(
@@ -23,7 +24,7 @@ def main(
     # Load the model from MLflow
     logger.info(f"Loading model '{model_name}' version {model_version}...")
     model_uri = f"models:/{model_name}/{model_version}"
-    
+
     # Start MLflow run for logging (optional)
     mlflow.start_run()
 
@@ -40,11 +41,11 @@ def main(
     logger.info("Making predictions...")
     # Load the model using MLflow
     model = mlflow.sklearn.load_model(model_uri)
-    
-    # Prepare features for prediction (drop unnecessary columns)
-    features = df.drop(columns=['id','species']) 
 
-    # Make predictions with the logged model 
+    # Prepare features for prediction (drop unnecessary columns)
+    features = df.drop(columns=['id', 'species'])
+
+    # Make predictions with the logged model
     predictions = model.predict(features)
     accuracy = model.score(features.values, df.species)
     logger.info(f"The accuracy in the predictions is {accuracy}")
@@ -61,6 +62,7 @@ def main(
     mlflow.log_artifact(predictions_path)
     # End MLflow run
     mlflow.end_run()
+
 
 if __name__ == "__main__":
     app()

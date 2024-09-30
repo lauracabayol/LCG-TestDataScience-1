@@ -1,3 +1,5 @@
+from VitalMetrics.classifier import Classifier
+from VitalMetrics.config import MODELS_DIR, PROCESSED_DATA_DIR, MODEL_PARAMS, FIGURES_DIR
 from pathlib import Path
 import typer
 from loguru import logger
@@ -10,12 +12,11 @@ import mlflow
 import mlflow.sklearn
 
 # Set the tracking URI
-mlflow.set_tracking_uri("http://127.0.0.1:5000") 
+mlflow.set_tracking_uri("http://127.0.0.1:5000")
 
-from VitalMetrics.config import MODELS_DIR, PROCESSED_DATA_DIR, MODEL_PARAMS, FIGURES_DIR
-from VitalMetrics.classifier import Classifier
 
 app = typer.Typer()
+
 
 @app.command()
 def main(
@@ -86,6 +87,7 @@ def main(
         # Save the model locally (optional)
         filename = f"{model_type}_model.pkl"
         pickle.dump(classifier, open(MODELS_DIR / filename, "wb"))
+
 
 if __name__ == "__main__":
     app()
