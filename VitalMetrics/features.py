@@ -45,6 +45,3 @@ def feature_engineering(df: pd.DataFrame) -> pd.DataFrame:
 
     return df
 
-
-if __name__ == "__main__":
-    app()
