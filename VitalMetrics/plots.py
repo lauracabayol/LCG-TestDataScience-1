@@ -1,9 +1,7 @@
 from pathlib import Path
-
 import typer
 from loguru import logger
 from tqdm import tqdm
-
 from VitalMetrics.config import FIGURES_DIR, PROCESSED_DATA_DIR
 
 app = typer.Typer()

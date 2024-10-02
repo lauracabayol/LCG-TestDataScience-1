@@ -1,5 +1,4 @@
 from pathlib import Path
-
 from dotenv import load_dotenv
 from loguru import logger
 
@@ -22,14 +21,14 @@ FIGURES_DIR = REPORTS_DIR / "figures"
 
 # Model parameters for different classifiers
 MODEL_PARAMS = {
-    'n_estimators': 100,
-    'max_depth': 5,
-    'learning_rate': 0.1,
-    'solver': 'lbfgs',
-    'max_iter': 200,
-    'C': 1.0,
-    'kernel': 'rbf',
-    'gamma': 'scale',
-    'n_neighbors': 5,
-    'random_state': 42
+    "n_estimators": 100,
+    "max_depth": 5,
+    "learning_rate": 0.1,
+    "solver": "lbfgs",
+    "max_iter": 200,
+    "C": 1.0,
+    "kernel": "rbf",
+    "gamma": "scale",
+    "n_neighbors": 5,
+    "random_state": 42,
 }
