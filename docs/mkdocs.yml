@@ -1,0 +1,5 @@
+site_name: PENGUINS CLASSIFIER
+nav:
+  - Home: index.md
+theme:
+  name: mkdocs
