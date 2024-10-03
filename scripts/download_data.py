@@ -2,7 +2,7 @@ import os
 import kaggle
 from loguru import logger
 
-def download_dataset(verbose=True):
+def download_dataset():
 
     # Kaggle authentication
     kaggle.api.authenticate()
@@ -18,18 +18,16 @@ def download_dataset(verbose=True):
     if os.path.exists(dataset_path):
         raise FileExistsError(f"The file {dataset_path} already exists.")
 
-    if verbose:
-        logger.info(f"Starting download of the dataset from Kaggle: {kaggle_dataset}...")
+    logger.info(f"Starting download of the dataset from Kaggle: {kaggle_dataset}...")
 
     # Download the dataset using Kaggle API
     try:
         kaggle.api.dataset_download_files(kaggle_dataset, path=dataset_path, unzip=True)
 
-        if verbose:
-            logger.info(f"Dataset unzipped and stored in {os.path.dirname(dataset_path)}.")
+        logger.info(f"Dataset unzipped and stored in {os.path.dirname(dataset_path)}.")
 
     except BaseException as e:
         logger.error(f"An error occurred while downloading or unzipping the dataset: {e}")
 
 if __name__ == "__main__":
-    download_dataset(verbose=True)
+    download_dataset()
