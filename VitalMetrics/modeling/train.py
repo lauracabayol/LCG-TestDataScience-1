@@ -19,6 +19,7 @@ mlflow.set_tracking_uri("http://127.0.0.1:5000")
 
 app = typer.Typer()
 
+
 @app.command()
 def main(
     training_data_path: Path = RAW_DATA_DIR / "palmer-penguins-dataset-for-eda/penguins_train.csv",
@@ -80,6 +81,7 @@ def main(
         mlflow.sklearn.log_model(
             sk_model=classifier, artifact_path="model", registered_model_name="PENGUINS_CLASSIFIER"
         )
+
 
 if __name__ == "__main__":
     app()

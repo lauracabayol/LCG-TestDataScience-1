@@ -5,6 +5,7 @@ from loguru import logger
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.model_selection import train_test_split
 
+
 def feature_engineering(df: pd.DataFrame) -> pd.DataFrame:
     """Performs feature engineering on the train and test datasets."""
 
@@ -21,7 +22,7 @@ def feature_engineering(df: pd.DataFrame) -> pd.DataFrame:
         "bill_depth_mm",
         "flipper_length_mm",
         "body_mass_g",
-    ] 
+    ]
 
     # Delete columns
     df.drop(columns=columns_to_delete, inplace=True)
@@ -43,4 +44,3 @@ def feature_engineering(df: pd.DataFrame) -> pd.DataFrame:
     logger.info("Feature engineering completed.")
 
     return df
-

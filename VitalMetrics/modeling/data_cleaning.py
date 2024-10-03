@@ -3,9 +3,11 @@ import pandas as pd
 import typer
 from loguru import logger
 from VitalMetrics.config import RAW_DATA_DIR, PROCESSED_DATA_DIR
+from VitalMetrics.features import feature_engineering
 
 
 app = typer.Typer()
+
 
 @app.command()
 def main(
@@ -14,7 +16,6 @@ def main(
     test_input_path: Path = RAW_DATA_DIR / "palmer-penguins-dataset-for-eda/penguins_test.csv",
     train_output_path: Path = PROCESSED_DATA_DIR / "penguin_train_features.csv",
     test_output_path: Path = PROCESSED_DATA_DIR / "penguin_test_features.csv",
-    test_size: float = 0.2,  # Size of the test set (20% by default)
 ):
     """Function to load dataset, split into train/test, generate features, and save to output files."""
 

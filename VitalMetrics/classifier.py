@@ -6,6 +6,7 @@ from loguru import logger
 
 from VitalMetrics.config import MODEL_PARAMS
 
+
 class Classifier:
     def __init__(self, model_type: str = "RandomForest"):
         """Initialize the classifier based on the selected model type.

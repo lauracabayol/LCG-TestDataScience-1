@@ -70,7 +70,7 @@ Replace <algorithm name> with one of the following options:
 - random_forest
 - logistic_regression
 - svm
-- 
+
 #### Making Predictions
 Once the model is trained, you can use the trained model to make predictions. Run the following command:
 ```bash
@@ -125,6 +125,7 @@ This will start a Jupyter notebook where you can interact with the pre-trained b
 ```bash
 http://localhost:9999
 ```
+**The access token is 12345**
 The notebook is pre-configured to load and run the best model, so you can use it without needing to access MLflow.
 
 ## License

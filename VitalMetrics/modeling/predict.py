@@ -13,6 +13,7 @@ from VitalMetrics.features import feature_engineering
 mlflow.set_tracking_uri("http://127.0.0.1:5000")
 app = typer.Typer()
 
+
 @app.command()
 def main(
     # ---- Define input and output paths ----
