@@ -5,7 +5,6 @@ from loguru import logger
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.model_selection import train_test_split
 
-
 def feature_engineering(df: pd.DataFrame) -> pd.DataFrame:
     """Performs feature engineering on the train and test datasets."""
 

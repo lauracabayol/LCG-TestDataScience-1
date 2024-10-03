@@ -17,9 +17,7 @@ from VitalMetrics.features import feature_engineering
 # Set the tracking URI
 mlflow.set_tracking_uri("http://127.0.0.1:5000")
 
-
 app = typer.Typer()
-
 
 @app.command()
 def main(
@@ -82,7 +80,6 @@ def main(
         mlflow.sklearn.log_model(
             sk_model=classifier, artifact_path="model", registered_model_name="PENGUINS_CLASSIFIER"
         )
-
 
 if __name__ == "__main__":
     app()
