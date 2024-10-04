@@ -208,3 +208,22 @@ disp = ConfusionMatrixDisplay(confusion_matrix=cm)
 disp.plot()
 
 # A simple kmeans algorithm can already make a reasonable classification
+
+# # 5. REPRESENTATION OF THE OTHER VARIABLES
+
+# +
+from seaborn import pairplot
+
+corner_plot = sns.pairplot(df, 
+                           vars=["bill_length_mm", "bill_depth_mm", "flipper_length_mm", "body_mass_g"], 
+                           hue="species", 
+                           corner=True,
+                           palette="colorblind", 
+                           diag_kind="hist")
+
+plt.savefig(FIGURES_DIR / "PenguinsCorner.png", bbox_inches="tight")
+plt.show()
+
+# -
+
+
