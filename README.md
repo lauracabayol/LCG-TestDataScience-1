@@ -59,6 +59,15 @@ After testing, the LSTM model was selected as the best performer and has been de
     │   └── train.py                                   <- Code to train models
     |
     |__ classifier.py                                  <- Main model code
+│
+├── app                                                <- Directory with notebook to run on a docker container
+│   └── data                                           <- Directory with data required to make predictions
+    └── ML_artifacts                                   <- Directory with model artifacts from MLFlow
+    └──Make_predictions.ipynb                          <- Notebook to make predictions
+├
+├── app.py                                             <-Script for model integration in weights and biases.
+├── model.pkl                                          <-Model for integration in weights and biases
+├── Dockerfile                                         <-Code to launch the docker container
 ```
 
 ## Installation
