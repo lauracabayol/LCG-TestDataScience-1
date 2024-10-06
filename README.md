@@ -20,42 +20,45 @@ After testing, the LSTM model was selected as the best performer and has been de
 ## Project Organization
 
 ```
-├── LICENSE            <- Open-source MIT license 
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
+├── LICENSE                                            <- Open-source MIT license 
+├── README.md                                          <- The top-level README for developers using this project.
 ├── data
-│   └── raw            <- The original, immutable data
-│   └── processed      <- Data features ready for training models
+│   └── raw/palmer-penguins-dataset-for-eda            <- The original data
+│   └── processed/                                     <- Data features ready for training models (train and test csv files)
 │
-├── docs               <- Mkdocs project
+├── docs                                               <- Mkdocs project (deployed to GitHub)
 │
-├── notebooks          <- Jupyter notebooks. 
+├── scripts                                            <- additional scripts not integrated in the main project
+│──
+    ├── download_data.py                               <- script to download data from kaggle
 │
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         VitalMetrics 
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis 
-│
-│
-└── VitalMetrics   <- Source code for use in this project.
+├── notebooks                                          <- Jupyter notebooks. 
+│──
+    ├── EDA.py                                         <- Notebook with exploratory data analysis
     │
-    ├── __init__.py             <- Makes VitalMetrics a Python module
+    ├── Make_predictions.py                            <- Notebook to make predictions and compare models registered at MLFlow. Only accessible if one has the MLFLow logs (not uploaded to GH)
+    
+├── pyproject.toml                                     <- Project configuration file with package metadata  
+│
+├── reports                                            <- LaTeX report
+│   └── LCG_TestDataScience_1.pdf                      <- Generated LaTeX report
+│
+├── requirements.txt                                   <- The requirements file for reproducing the analysis 
+│
+└── VitalMetrics                                       <- Source code for use in this project.
     │
-    ├── config.py               <- Store useful variables and configuration
+    ├── __init__.py                                    <- Makes VitalMetrics a Python module
     │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
+    ├── config.py                                      <- Store useful variables and configuration
+    │    
+    ├── features.py                                    <- Code to create features for modeling
     │
     ├── modeling                
     │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
+    │   ├── predict.py                                 <- Code to run model inference with trained models          
+    │   └── train.py                                   <- Code to train models
     |
-    |__ classifier.py <- Main model code
+    |__ classifier.py                                  <- Main model code
 ```
 
 ## Installation
