@@ -1,9 +1,8 @@
 Generating the docs
 ----------
+Docs are deployed to GitHub and integrated in the GitHub CI pipeline. 
 
-Use [mkdocs](http://www.mkdocs.org/) structure to update the documentation. 
-
-Build locally with:
+Docs can also be built locally with:
 
     mkdocs build
 
