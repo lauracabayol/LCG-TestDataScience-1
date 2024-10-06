@@ -6,7 +6,7 @@
 
  This repository uses data from the open Penguin data set available [here](https://www.kaggle.com/datasets/satyajeetrai/palmer-penguins-dataset-for-eda).
 
-The repository doumentation can be found [here](https://lauracabayol.github.io/LCG-TestDataScience-1/).
+The repository documentation can be found [here](https://lauracabayol.github.io/LCG-TestDataScience-1/).
 
 The repository explores four algoritms: 
 
