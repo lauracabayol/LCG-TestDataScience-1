@@ -36,7 +36,7 @@ After testing, the LSTM model was selected as the best performer and has been de
 │──
     ├── EDA.py                                         <- Notebook with exploratory data analysis
     ├── Make_predictions.py                            <- Notebook to make predictions and compare models registered at MLFlow. Only accessible if one has the MLFLow logs (not uploaded to GH)
-    ├── HTML_notebooks             <- Stable HTML version of notebooks
+    ├── HTML_notebooks                                 <- Stable HTML version of notebooks
 │
 ├── pyproject.toml                                     <- Project configuration file with package metadata  
 │
