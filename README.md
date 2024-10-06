@@ -35,9 +35,9 @@ After testing, the LSTM model was selected as the best performer and has been de
 ├── notebooks                                          <- Jupyter notebooks. 
 │──
     ├── EDA.py                                         <- Notebook with exploratory data analysis
-    │
     ├── Make_predictions.py                            <- Notebook to make predictions and compare models registered at MLFlow. Only accessible if one has the MLFLow logs (not uploaded to GH)
-    
+    ├── HTML_notebooks             <- Stable HTML version of notebooks
+│
 ├── pyproject.toml                                     <- Project configuration file with package metadata  
 │
 ├── reports                                            <- LaTeX report
@@ -64,6 +64,7 @@ After testing, the LSTM model was selected as the best performer and has been de
 │   └── data                                           <- Directory with data required to make predictions
     └── ML_artifacts                                   <- Directory with model artifacts from MLFlow
     └──Make_predictions.ipynb                          <- Notebook to make predictions
+    └──requirements.txt                                <- Required Python modules
 ├
 ├── app.py                                             <-Script for model integration in weights and biases.
 ├── model.pkl                                          <-Model for integration in weights and biases
